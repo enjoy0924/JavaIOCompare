@@ -19,7 +19,7 @@ public class AcceptHandler implements CompletionHandler<AsynchronousSocketChanne
     @Override
     public void failed(Throwable exc, AsyncServerHandler serverHandler) {
         exc.printStackTrace();
-        serverHandler.latch.countDown();
+//        serverHandler.latch.countDown();
     }
 }
 

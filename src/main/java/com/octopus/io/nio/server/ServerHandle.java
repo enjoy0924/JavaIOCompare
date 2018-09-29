@@ -1,5 +1,7 @@
 package com.octopus.io.nio.server;
 
+import com.octopus.io.Calculator;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -112,7 +114,7 @@ public class ServerHandle implements Runnable{
                     //处理数据
                     String result = null;
                     try{
-                        result = expression;//Calculator.cal(expression).toString();
+                        result = Calculator.cal(expression).toString();
                     }catch(Exception e){
                         result = "计算错误：" + e.getMessage();
                     }

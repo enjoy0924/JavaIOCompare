@@ -1,5 +1,7 @@
 package com.octopus.io.bio.server;
 
+import com.octopus.io.Calculator;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -25,10 +27,11 @@ public class ServerHandler implements Runnable{
                 //通过BufferedReader读取一行
                 //如果已经读到输入流尾部，返回null,退出循环
                 //如果得到非空值，就尝试计算结果并返回
-                if((expression = in.readLine())==null) break;
+                if((expression = in.readLine())==null)
+                    break;
                 System.out.println("服务器收到消息：" + expression);
                 try{
-                    result = expression;//Calculator.cal(expression).toString();
+                    result = Calculator.cal(expression).toString();
                 }catch(Exception e){
                     result = "计算错误：" + e.getMessage();
                 }
